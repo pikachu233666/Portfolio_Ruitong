@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>
+   Contact | Ruitong's Art
+  </title>
+<link href="assets/css/fonts.css" rel="stylesheet"/>
+<link href="assets/css/contact.css" rel="stylesheet"/>
+<style>
+   /* Unified header spacing */
+header,.header,.site-header,[class*="header"]{line-height:1.2!important;}
+header .logo,.header .logo,[class*="logo"]{line-height:1.1!important;}
+header nav a,.header nav a,[class*="nav"] a{line-height:1.2!important;}
+  </style>
+<style>
+   /* Exact mobile menu */
+.mobile-menu-toggle,
+.mobile-menu-panel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .siteui-horizontal-menu,
+  .siteui-menu,
+  nav[aria-label="Navigation"] {
+    display: none !important;
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+    position: fixed;
+    top: 34px;
+    right: 30px;
+    z-index: 100001;
+    width: 26px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: #111;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .mobile-menu-toggle span,
+  .mobile-menu-toggle::before,
+  .mobile-menu-toggle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 26px;
+    height: 1px;
+    background: #111;
+  }
+
+  .mobile-menu-toggle span {
+    top: 9px;
+  }
+
+  .mobile-menu-toggle::before {
+    top: 2px;
+  }
+
+  .mobile-menu-toggle::after {
+    bottom: 2px;
+  }
+
+  .mobile-menu-toggle.is-open {
+    top: 38px;
+    right: 34px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .mobile-menu-toggle.is-open span {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.is-open::before,
+  .mobile-menu-toggle.is-open::after {
+    top: 10px;
+    width: 24px;
+    background: #3b241a;
+  }
+
+  .mobile-menu-toggle.is-open::before {
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-toggle.is-open::after {
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu-panel {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .mobile-menu-panel.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-links {
+    position: absolute;
+    top: 151px;
+    left: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+
+  .mobile-menu-panel a {
+    color: #000;
+    text-decoration: none;
+    font-family: var(--font-main, Arial, Helvetica, sans-serif);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-panel a[] {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .mobile-menu-brand {
+    position: absolute;
+    top: 333px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 29px;
+  }
+
+  .mobile-menu-stamp {
+    width: 92px;
+    height: 92px;
+    object-fit: contain;
+    display: none;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+  }
+
+  .mobile-menu-panel.is-open .mobile-menu-stamp {
+    display: block;
+    animation: mobile-stamp-rotate 10s linear infinite;
+  }
+
+
+  .site-header .mobile-menu-stamp,
+  header .mobile-menu-stamp,
+  .header-stamp,
+  .desktop-stamp {
+    display: none !important;
+  }
+
+  .mobile-menu-logo {
+    color: #000;
+    font-family: var(--font-main, Arial, Helvetica, sans-serif);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  @keyframes mobile-stamp-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+  </style>
+<style>
+   /* Rotating SVG stamp: desktop header + mobile menu only */
+.rotating-stamp {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: stamp-clockwise-rotate 10s linear infinite;
+  will-change: transform;
+}
+
+.header-stamp-holder {
+  min-height: 0;
+  height: auto;
+  min-width: 0;
+  width: 7.78%;
+  max-width: 99999px;
+  max-height: 99999px;
+  aspect-ratio: 1 / 1;
+  display: block;
+  align-self: start;
+  justify-self: start;
+  pointer-events: none;
+  margin-left: 91.45565711462451%;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: max(0.5px, 0.0636487 * (var(--scaling-factor) - var(--scrollbar-width)));
+  grid-area: 1 / 1 / 4 / 2;
+  position: relative;
+  z-index: 5;
+}
+
+@keyframes stamp-clockwise-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 1023px) {
+  .header-stamp-holder {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotating-stamp {
+    animation: none;
+  }
+}
+  </style>
+<style>
+   /* Final rotating stamp placement
+      Desktop: show in the header, vertically centered.
+      Mobile: hide until the full-screen menu opens. */
+@media (min-width: 769px) {
+  header,
+  .site-header,
+  [data-testid="screenWidthContainer"] {
+    position: relative !important;
+  }
+
+  .header-stamp-holder.desktop-stamp-holder {
+    display: flex !important;
+    position: absolute !important;
+    top: 50% !important;
+    right: clamp(30px, 4.8vw, 72px) !important;
+    transform: translateY(-50%) !important;
+    width: clamp(92px, 7.4vw, 132px) !important;
+    height: clamp(92px, 7.4vw, 132px) !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    grid-area: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    pointer-events: none !important;
+    z-index: 1000 !important;
+  }
+
+  .header-stamp-holder.desktop-stamp-holder .desktop-stamp,
+  .header-stamp-holder.desktop-stamp-holder .rotating-stamp {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform-origin: 50% 50% !important;
+    transform-box: fill-box !important;
+    animation: stamp-clockwise-center 10s linear infinite !important;
+    will-change: transform;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-stamp-holder.desktop-stamp-holder,
+  .desktop-stamp-holder .desktop-stamp {
+    display: none !important;
+  }
+
+  .mobile-menu-stamp {
+    display: none !important;
+    transform-origin: 50% 50% !important;
+    transform-box: fill-box !important;
+  }
+
+  .mobile-menu-panel.is-open .mobile-menu-stamp {
+    display: block !important;
+    animation: stamp-clockwise-center 10s linear infinite !important;
+  }
+}
+
+@keyframes stamp-clockwise-center {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+  </style>
+<style>
+   .siteui-horizontal-menu a[] .siteui-horizontal-menu__item-label,.siteui-menu a[] .siteui-menu__item-label{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;}
+  </style>
+<style>
+   /* Footer copyright inside the existing blue footer area */
+#main_MF footer .footer-copyright{
+  grid-area:3 / 1 / 4 / 2;
+  justify-self:center;
+  align-self:start;
+  width:auto;
+  margin:clamp(10px, 1.6vw, 18px) auto 0;
+  padding:0;
+  text-align:center;
+  font:inherit;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:.04em;
+  color:#d0d0d0;
+  opacity:.95;
+  pointer-events:auto;
+  position:relative;
+  z-index:2;
+}
+@media screen and (max-width:1023px){
+  #main_MF footer .footer-copyright{
+    grid-area:6 / 1 / 7 / 2;
+    margin-top:18px;
+    margin-bottom:18px;
+    font-size:12px;
+  }
+}
+  </style>
+<style>
+/* Mobile menu stamp size and center rotation fix */
+@media (max-width: 768px) {
+  .mobile-menu-brand {
+    top: 333px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    align-items: center !important;
+    gap: 29px !important;
+  }
+
+  .mobile-menu-stamp {
+    display: none !important;
+    width: 92px !important;
+    height: 92px !important;
+    min-width: 92px !important;
+    min-height: 92px !important;
+    max-width: 92px !important;
+    max-height: 92px !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform-origin: 50% 50% !important;
+    transform-box: fill-box !important;
+    will-change: transform !important;
+  }
+
+  .mobile-menu-panel.is-open .mobile-menu-stamp {
+    display: block !important;
+    animation: stamp-clockwise-center 10s linear infinite !important;
+  }
+}
+</style>
+
+<style id="active-page-underline-fix">
+/* Active page underline: desktop header + mobile full-screen menu */
+.siteui-horizontal-menu a[aria-current="page"],
+.siteui-horizontal-menu a.active-nav,
+.mobile-menu-links a[aria-current="page"],
+.mobile-menu-links a.active-nav {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  color: inherit !important;
+}
+.siteui-horizontal-menu a[aria-current="page"] .siteui-horizontal-menu__item-label,
+.siteui-horizontal-menu a.active-nav .siteui-horizontal-menu__item-label,
+.siteui-horizontal-menu a[aria-current="page"] .siteui-menu__item-label,
+.siteui-horizontal-menu a.active-nav .siteui-menu__item-label,
+.siteui-horizontal-menu a[aria-current="page"] ._label_zj48f_18,
+.siteui-horizontal-menu a.active-nav ._label_zj48f_18 {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  display: inline-block !important;
+  color: inherit !important;
+}
+.mobile-menu-links a[aria-current="page"],
+.mobile-menu-links a.active-nav {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+}
+</style>
+</head>
+<body class="responsive">
+<svg style="display:none">
+<defs id="dom-store-defs">
+</defs>
+</svg>
+<div id="SITE_CONTAINER">
+<div class="main_MF" id="main_MF">
+<div aria-label="top of page" class="qe3oTb ignore-focus SCROLL_TO_TOP" id="SCROLL_TO_TOP" role="region">
+<span class="TvbeET">
+      top of page
+     </span>
+</div>
+<div class="site-root" id="site-root">
+<div class="masterPage css-editing-scope" id="masterPage">
+<div class="Y3K28_ SITE_PAGES" id="SITE_PAGES">
+<div class="ETqrjz theme-vars xmsdy" id="xmsdy">
+<div class="g0IvTF siteui-page" data-testid="page-bg">
+</div>
+<div>
+<div class="xmsdy-overflow-wrapper ku1hVK" data-testid="responsive-container-overflow">
+<div class="xmsdy-container" data-testid="responsive-container-content" role="group">
+<header class="comp-mn6663ra S829f_ comp-mn6663ra-container" id="comp-mn6663ra">
+<section class="ke5pl1 comp-mn6663ra_r_comp-mb7ogqqn-container section comp-mn6663ra_r_comp-mb7ogqqn ke5pl1 yEgiaI siteui-header undefined fwXYgt" data-testid="section-container" id="comp-mn6663ra_r_comp-mb7ogqqn">
+<div class="container _internalContainerRoot_ikbgu_1 builder-root theme-vars comp-mn6663ra_r_comp-mdr142kt" data-testid="internal-container-root" id="comp-mn6663ra_r_comp-mdr142kt">
+<div class="_backgroundLayer_ikbgu_25" data-testid="internal-container-background-layer">
+<div class="builder-root comp-mn6663ra_r_comp-mhs1biva _background_x7ip3_1 _mask_x7ip3_35 background" id="comp-mn6663ra_r_comp-mhs1biva">
+</div>
+</div>
+<div class="comp-mn6663ra_r_comp-mdr142kt-container max-width-container" data-testid="internal-container-content" role="group">
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mn6663ra_r_comp-mpc3nvd5 _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mn6663ra_r_comp-mpc3nvd5">
+<h5>
+                 Ruitong
+                </h5>
+</div>
+<div class="site-presets-wrapper w-3f27c3f4-5a2b-4b2c-9b14-05d9c0c6d5ec comp-mn6663ra_r_comp-mn7chwe6-presets-wrapper">
+<div class="builder-root comp-mn6663ra_r_comp-mn7chwe6 menu _animation-calm_1m6ap_8" id="comp-mn6663ra_r_comp-mn7chwe6">
+<div id="comp-mn6663ra_r_comp-mn7chwe6-menu-content">
+<nav aria-label="Navigation" class="_root_s6hzk_2 navbar _navbar_1b8mp_1 _ltr_1b8mp_18 siteui-horizontal-menu siteui-menu">
+<ul class="_container_s6hzk_173">
+<li class="_listItem_zj48f_1">
+<div class="_itemWrapper_zj48f_10">
+<div class="item _labelContainer_zj48f_18 siteui-horizontal-menu__item siteui-menu__item">
+<a data-testid="linkElement" href="home.html" target="_self">
+<div class="_label_zj48f_18 siteui-horizontal-menu__item-label siteui-menu__item-label">
+                         Home
+                        </div>
+</a>
+</div>
+</div>
+<span class="_divider_zj48f_216">
+</span>
+</li>
+<li class="_listItem_zj48f_1">
+<div class="_itemWrapper_zj48f_10">
+<div class="item _labelContainer_zj48f_18 siteui-horizontal-menu__item siteui-menu__item">
+<a data-testid="linkElement" href="about.html" target="_self">
+<div class="_label_zj48f_18 siteui-horizontal-menu__item-label siteui-menu__item-label">
+                         About
+                        </div>
+</a>
+</div>
+</div>
+<span class="_divider_zj48f_216">
+</span>
+</li>
+<li class="_listItem_zj48f_1">
+<div class="_itemWrapper_zj48f_10">
+<div class="item _labelContainer_zj48f_18 siteui-horizontal-menu__item siteui-menu__item">
+<a data-testid="linkElement" href="portfolio.html" target="_self">
+<div class="_label_zj48f_18 siteui-horizontal-menu__item-label siteui-menu__item-label">
+                         Portfolio
+                        </div>
+</a>
+</div>
+</div>
+<span class="_divider_zj48f_216">
+</span>
+</li>
+<li class="_listItem_zj48f_1">
+<div class="_itemWrapper_zj48f_10">
+<div class="item _labelContainer_zj48f_18 siteui-horizontal-menu__item siteui-menu__item">
+<a aria-current="page" class="active-nav" data-testid="linkElement" href="contact.html" target="_self">
+<div class="_label_zj48f_18 siteui-horizontal-menu__item-label siteui-menu__item-label">
+                         Contact
+                        </div>
+</a>
+</div>
+</div>
+<span class="_divider_zj48f_216">
+</span>
+</li>
+</ul>
+<div class="_root_12ho9_1">
+<div aria-hidden="true" aria-label="scroll" class="_root_107ew_1 _hidden_107ew_39 siteui-menu__scroll-button scroll-button">
+<span class="_icon_107ew_13 siteui-menu__scroll-button-icon">
+<svg>
+<path>
+</path>
+</svg>
+</span>
+</div>
+<div aria-hidden="true" aria-label="scroll" class="_root_107ew_1 _hidden_107ew_39 siteui-menu__scroll-button scroll-button">
+<span class="_icon_107ew_13 siteui-menu__scroll-button-icon">
+<svg>
+<path>
+</path>
+</svg>
+</span>
+</div>
+</div>
+</nav>
+</div>
+<div class="site-presets-wrapper w-4190f51c-3836-49f6-8114-96219c165b29 hamburgerOpenButton-presets-wrapper">
+<button aria-label="" class="_root_tpqnr_1 hamburger-open-button _openButton_1izd6_79 _button_tpqnr_19 button _fallbackDirection_uix1w_1 siteui-button" data-testid="buttonContent" type="button">
+<div class="_animatedIcon_18zas_2 animatedIcon icon animated-icon _icon_tpqnr_78" id="animated-icon">
+<div>
+<svg>
+<g>
+<path>
+</path>
+<path>
+</path>
+<path>
+</path>
+</g>
+</svg>
+</div>
+</div>
+</button>
+</div>
+</div>
+</div>
+<interact-element>
+<div class="header-stamp-holder desktop-stamp-holder" data-motion-enter="done">
+<img alt="" aria-hidden="true" class="desktop-stamp rotating-stamp" src="assets/images/menu-stamp.svg"/>
+</div>
+</interact-element>
+</div>
+</div>
+</section>
+</header>
+<main class="PAGE_SECTIONSxmsdy ooGRUo" id="PAGE_SECTIONSxmsdy">
+<section class="ke5pl1 section comp-mn6663r2 siteui-section fwXYgt" data-testid="section-container" id="comp-mn6663r2">
+<div class="container _internalContainerRoot_ikbgu_1 builder-root theme-vars comp-mn6663rq" data-testid="internal-container-root" id="comp-mn6663rq">
+<div class="_backgroundLayer_ikbgu_25" data-testid="internal-container-background-layer">
+<div class="builder-root comp-mn6663rv _background_x7ip3_1 _mask_x7ip3_35 background" id="comp-mn6663rv">
+</div>
+</div>
+<div class="comp-mn6663rq-container max-width-container" data-testid="internal-container-content" role="group">
+<div class="_root_mubql_1 container builder-root comp-mnc2i9y7" id="comp-mnc2i9y7">
+<div class="container _internalContainerRoot_ikbgu_1 builder-root comp-mnc2i9y82 comp-mnc2i9y82-container" data-testid="internal-container-root" id="comp-mnc2i9y82">
+<div class="_backgroundLayer_ikbgu_25" data-testid="internal-container-background-layer">
+</div>
+<interact-element>
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mnc2d6dd _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mnc2d6dd" style="--motion-left: 352.953125px; --motion-top: 338.71875px;">
+<h1>
+                    Start a Conversation
+                   </h1>
+</div>
+</interact-element>
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mnc2d6dt _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mnc2d6dt">
+<p>
+<span>
+                    No matter who you are, an artist, someone who loves art, someone who likes my works, wants to offer suggestions, wants to collaborate with me, or just wants to communicate with me, you are all welcome to contact me!
+                   </span>
+</p>
+</div>
+<interact-element>
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mn668tpj _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mn668tpj">
+<h2 style="font-size:18px">
+                    E-mail
+                   </h2>
+</div>
+</interact-element>
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mn668tpp _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mn668tpp">
+<p>
+                   ruitongz.art@outlook.com
+                  </p>
+<p>
+                   zhanruit@sheridancollege.ca
+                  </p>
+</div>
+<interact-element>
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mn668try _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mn668try">
+<h2 style="font-size:18px">
+                    INSTAGRAM
+                   </h2>
+</div>
+</interact-element>
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mn668ts5 _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mn668ts5">
+<p>
+<span>
+                    @cloris09145
+                   </span>
+</p>
+</div>
+</div>
+</div>
+<div class="_root_mubql_1 container builder-root comp-mnc2i9yi" id="comp-mnc2i9yi">
+<div class="container _internalContainerRoot_ikbgu_1 builder-root comp-mnc2i9yi3 comp-mnc2i9yi3-container" data-testid="internal-container-root" id="comp-mnc2i9yi3">
+<div class="_backgroundLayer_ikbgu_25" data-testid="internal-container-background-layer">
+</div>
+<div class="QrIus comp-mnc2d6b7" id="comp-mnc2d6b7">
+<div class="comp-mnc2d6b7_ooi">
+<div style="--site-color-29:var(--site-color-3);--site-color-37:var(--site-color-5);--site-color-38:var(--site-color-8);--site-color-39:var(--site-color-8);--site-color-40:var(--site-color-1);--site-color-41:var(--site-color-8);--site-color-42:var(--site-color-8);--site-color-43:var(--site-color-1);--site-color-44:var(--site-color-3);--site-color-45:var(--site-color-3);--site-color-46:var(--site-color-1);--site-color-47:var(--site-color-1);--site-color-48:var(--site-color-8);--site-color-49:var(--site-color-8);--site-color-50:var(--site-color-1);--site-color-51:var(--site-color-8);--site-color-52:var(--site-color-8);--site-color-53:var(--site-color-1);--site-color-54:var(--site-color-3);--site-color-55:var(--site-color-3)">
+<div class="sN4uTVR" style="--index2490108247-shadowXOffset:0px;--index2490108247-shadowYOffset:0px;overflow:visible">
+<div style="--site-color-29:var(--site-color-3);--site-color-37:var(--site-color-5);--site-color-38:var(--site-color-8);--site-color-39:var(--site-color-8);--site-color-40:var(--site-color-1);--site-color-41:var(--site-color-8);--site-color-42:var(--site-color-8);--site-color-43:var(--site-color-1);--site-color-44:var(--site-color-3);--site-color-45:var(--site-color-3);--site-color-46:var(--site-color-1);--site-color-47:var(--site-color-1);--site-color-48:var(--site-color-8);--site-color-49:var(--site-color-8);--site-color-50:var(--site-color-1);--site-color-51:var(--site-color-8);--site-color-52:var(--site-color-8);--site-color-53:var(--site-color-1);--site-color-54:var(--site-color-3);--site-color-55:var(--site-color-3)">
+<div>
+<form aria-label="Contact Form" class="" id="form-95e7e87a-5bd1-4830-87f9-f4e5a01afc58">
+<fieldset class="kLNiUo">
+<div>
+<div class="ckHV4G">
+<div>
+<div class="GLWhGq" style="display:grid;width:100%;grid-template-columns:repeat(12, 1fr);grid-auto-rows:minmax(min-content, max-content) 1fr">
+<div style="grid-row:1 / span 1;grid-column:1 / span 12;display:flex;align-items:flex-end">
+<label class="shszO9W sdcwRYb" id="form-field-label-6efce103-12b2-4aa3-7f0d-25f6ba3cd205-comp-mnc2d6b7-">
+                               First name
+                               <span aria-hidden="true" class="sHbjjkq">
+                                *
+                               </span>
+</label>
+</div>
+<div style="grid-row:2 / span 1;grid-column:1 / span 12">
+<div class="sigpKjl oYEaGDN---theme-3-box oYEaGDN--newErrorMessage snZ_6f6 sL5d0Ld">
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly s__8YVWUI">
+<div class="s__72lfJk smyXERm oYEaGDN---theme-3-box">
+<input aria-invalid="false" aria-label="First name" class="sjImZoO has-custom-focus" id="form-field-input-6efce103-12b2-4aa3-7f0d-25f6ba3cd205-comp-mnc2d6b7-" required="" type="text" value=""/>
+</div>
+</div>
+</div>
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly s__0oqQvY">
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="GLWhGq" style="display:grid;width:100%;grid-template-columns:repeat(12, 1fr);grid-auto-rows:minmax(min-content, max-content) 1fr">
+<div style="grid-row:1 / span 1;grid-column:1 / span 12;display:flex;align-items:flex-end">
+<label class="shszO9W sdcwRYb" id="form-field-label-6a997907-9404-41a8-042f-bac7222ea12d-comp-mnc2d6b7-">
+                               Last name
+                               <span aria-hidden="true" class="sHbjjkq">
+                                *
+                               </span>
+</label>
+</div>
+<div style="grid-row:2 / span 1;grid-column:1 / span 12">
+<div class="sigpKjl oYEaGDN---theme-3-box oYEaGDN--newErrorMessage snZ_6f6 sL5d0Ld">
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly s__8YVWUI">
+<div class="s__72lfJk smyXERm oYEaGDN---theme-3-box">
+<input aria-invalid="false" aria-label="Last name" class="sjImZoO has-custom-focus" id="form-field-input-6a997907-9404-41a8-042f-bac7222ea12d-comp-mnc2d6b7-" required="" type="text" value=""/>
+</div>
+</div>
+</div>
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly s__0oqQvY">
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="GLWhGq" style="display:grid;width:100%;grid-template-columns:repeat(12, 1fr);grid-auto-rows:minmax(min-content, max-content) 1fr">
+<div style="grid-row:1 / span 1;grid-column:1 / span 12;display:flex;align-items:flex-end">
+<label class="shszO9W sdcwRYb" id="form-field-label-daf2262a-c168-4121-adbf-9a1759c29cfd-comp-mnc2d6b7-">
+                               Email
+                               <span aria-hidden="true" class="sHbjjkq">
+                                *
+                               </span>
+</label>
+</div>
+<div style="grid-row:2 / span 1;grid-column:1 / span 12">
+<div class="sigpKjl oYEaGDN---theme-3-box oYEaGDN--newErrorMessage snZ_6f6 sL5d0Ld">
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly s__8YVWUI">
+<div class="s__72lfJk smyXERm oYEaGDN---theme-3-box">
+<input aria-invalid="false" aria-label="Email" class="sjImZoO has-custom-focus" id="form-field-input-daf2262a-c168-4121-adbf-9a1759c29cfd-comp-mnc2d6b7-" required="" type="email" value=""/>
+</div>
+</div>
+</div>
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly s__0oqQvY">
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="GLWhGq" style="display:grid;width:100%;grid-template-columns:repeat(12, 1fr);grid-auto-rows:minmax(min-content, max-content) 1fr">
+<div style="grid-row:1 / span 1;grid-column:1 / span 12;display:flex;align-items:flex-end">
+<label class="shszO9W sdcwRYb" id="form-field-label-0b6e565a-2e3d-4e48-d0ec-35ae20fe5e3e-comp-mnc2d6b7-">
+                               Subject
+                              </label>
+</div>
+<div style="grid-row:2 / span 1;grid-column:1 / span 12">
+<div class="sigpKjl oYEaGDN---theme-3-box oYEaGDN--newErrorMessage snZ_6f6 sL5d0Ld">
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly s__8YVWUI">
+<div class="s__72lfJk smyXERm oYEaGDN---theme-3-box">
+<input aria-invalid="false" aria-label="Subject" class="sjImZoO has-custom-focus" id="form-field-input-0b6e565a-2e3d-4e48-d0ec-35ae20fe5e3e-comp-mnc2d6b7-" type="text" value=""/>
+</div>
+</div>
+</div>
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly s__0oqQvY">
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="GLWhGq" style="display:grid;width:100%;grid-template-columns:repeat(12, 1fr);grid-auto-rows:minmax(min-content, max-content) 1fr">
+<div style="grid-row:1 / span 1;grid-column:1 / span 12;display:flex;align-items:flex-end">
+<label class="shszO9W sdcwRYb" id="form-field-label-8084875f-96d9-42c1-cd70-9a5a572375ef-comp-mnc2d6b7-">
+                               Message
+                              </label>
+</div>
+<div style="grid-row:2 / span 1;grid-column:1 / span 12">
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly sG8zQE0 ocZtaOx---theme-3-box ocZtaOx--newErrorMessage scI_sd4 shezckr">
+<div>
+<div class="sUs3fhJ">
+<textarea aria-invalid="false" aria-label="Message" class="sehMQtG has-custom-focus" id="form-field-input-8084875f-96d9-42c1-cd70-9a5a572375ef-comp-mnc2d6b7-" placeholder=""></textarea>
+</div>
+</div>
+</div>
+<div class="s__5mJsIL oKPjoIj---errorAppearance-8-TextOnly s__0oqQvY">
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="GLWhGq" style="display:grid;width:100%;grid-template-columns:repeat(12, 1fr);grid-auto-rows:minmax(min-content, max-content) 1fr">
+<div style="grid-row:1 / span 1;grid-column:1 / span 12;display:flex;align-items:flex-end">
+</div>
+<div style="grid-row:2 / span 1;grid-column:1 / span 12">
+<div class="">
+<button aria-disabled="false" aria-live="assertive" class="s__3DOwO7 sFTe_V3 sWHTiwe ojChOw_---paddingMode-16-explicitPaddings ojChOw_--wrapContent ojChOw_---hoverStyle-9-underline spPayPE ohrgDww--upgrade sgKo7D0 sasFW9G" style="--site-ui-tpa-button-font-size-default:16px;--site-ui-tpa-button-line-height-default:1.5em" type="button">
+<span class="sezcxt9 sewooAr">
+                                 Send message
+                                </span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-live="polite" role="region">
+<div style="opacity:0">
+</div>
+</div>
+</div>
+</fieldset>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<interact-element>
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mnwvhjjt _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mnwvhjjt">
+<h2 style="font-size:18px">
+                    Message
+                   </h2>
+</div>
+</interact-element>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="comp-mn6663sm S829f_ comp-mn6663sm-container" id="comp-mn6663sm">
+<section class="ke5pl1 comp-mn6663sm_r_comp-kbgakgyt-container section comp-mn6663sm_r_comp-kbgakgyt siteui-footer undefined fwXYgt" data-testid="section-container" id="comp-mn6663sm_r_comp-kbgakgyt">
+<div class="container _internalContainerRoot_ikbgu_1 builder-root theme-vars comp-mn6663sm_r_comp-mdr13kdg" data-testid="internal-container-root" id="comp-mn6663sm_r_comp-mdr13kdg">
+<div class="_backgroundLayer_ikbgu_25" data-testid="internal-container-background-layer">
+<div class="builder-root comp-mn6663sm_r_comp-mdr17w8k _background_x7ip3_1 _mask_x7ip3_35 background" id="comp-mn6663sm_r_comp-mdr17w8k">
+</div>
+</div>
+<div class="comp-mn6663sm_r_comp-mdr13kdg-container max-width-container" data-testid="internal-container-content" role="group">
+<div class="logo-wrapper _logo_ackza_1 builder-root comp-mn6663sm_r_comp-mnc0chil" id="comp-mn6663sm_r_comp-mnc0chil">
+<a class="_linkLayer_ackza_12" data-testid="linkElement" href="home.html" target="_self">
+<wow-image class="_image_8j9vj_1" style="--site-img-max-width:max(393px, 100%)">
+<img alt="Homepage" src="./assets/images/contact_1.png" style="width: 613px; height: 223px; object-fit: contain; object-position: center center;"/>
+</wow-image>
+</a>
+</div>
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mn6663sm_r_comp-mnc0chhw _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mn6663sm_r_comp-mnc0chhw">
+<p>
+                 Instagram: @cloris09145
+                </p>
+</div>
+<div class="_WRichTextNewSkin_p216z_164 _supportTableDesign_p216z_54 builder-root comp-mn6663sm_r_comp-mnc0chfh _wrichtext_aqg9v_1 wrichtext siteui-rich-text" data-testid="richTextElement" id="comp-mn6663sm_r_comp-mnc0chfh">
+<p>
+<br/>
+                 E-mail: ruitongz.art@outlook.com
+                </p>
+</div>
+<div class="footer-copyright">
+                © RuiTong Zhang · ruitongz.com
+               </div>
+</div>
+</div>
+</section>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-label="bottom of page" class="qe3oTb ignore-focus SCROLL_TO_BOTTOM" id="SCROLL_TO_BOTTOM" role="region">
+<span class="TvbeET">
+      bottom of page
+     </span>
+</div>
+</div>
+</div>
+<script src="assets/js/main.js">
+</script>
+<button aria-controls="mobile-menu-panel" aria-expanded="false" aria-label="Open navigation menu" class="mobile-menu-toggle" type="button">
+<span aria-hidden="true">
+</span>
+</button>
+<div aria-label="Mobile navigation" class="mobile-menu-panel" id="mobile-menu-panel">
+<nav aria-label="Mobile site navigation" class="mobile-menu-links">
+<a href="home.html">
+     Home
+    </a>
+<a href="about.html">
+     About
+    </a>
+<a href="portfolio.html">
+     Portfolio
+    </a>
+<a aria-current="page" class="active-nav" href="contact.html">
+     Contact
+    </a>
+</nav>
+<div aria-hidden="true" class="mobile-menu-brand">
+<img alt="" class="mobile-menu-stamp rotating-stamp" src="assets/images/menu-stamp.svg"/>
+<div class="mobile-menu-logo">
+     ruitong
+    </div>
+</div>
+</div>
+<script>
+   (function () {
+  var toggle = document.querySelector('.mobile-menu-toggle');
+  var panel = document.querySelector('.mobile-menu-panel');
+  if (!toggle || !panel) return;
+
+  function setOpen(isOpen) {
+    panel.classList.toggle('is-open', isOpen);
+    toggle.classList.toggle('is-open', isOpen);
+    document.body.classList.toggle('mobile-menu-open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!panel.classList.contains('is-open'));
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') setOpen(false);
+  });
+}());
+  </script>
+</body>
+</html>

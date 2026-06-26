@@ -1,0 +1,14 @@
+:root {
+  --font-main:Arial,Helvetica,sans-serif;
+
+}
+
+html,body,body * {
+  font-family:var(--font-main)!important;
+
+}
+
+/* Unified header spacing */
+header,.header,.site-header,[class*="header"]{line-height:1.2!important;}
+header .logo,.header .logo,[class*="logo"]{line-height:1.1!important;}
+header nav a,.header nav a,[class*="nav"] a{line-height:1.2!important;}
