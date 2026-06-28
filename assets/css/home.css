@@ -16873,3 +16873,200 @@ overflow:auto;
 @media (max-width:768px){
 .mobile-menu-toggle{display:block!important;position:fixed;top:24px;right:24px;z-index:100000;}
 }
+
+/* ===== Custom optimization: hero Dive In text + button ===== */
+#main_MF :where(.comp-mn668kp0) {
+  max-width: 520px;
+  font-family: var(--font-main, 'Manrope', sans-serif) !important;
+  color: #2f425f !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0.015em !important;
+  opacity: 0.92;
+}
+
+#main_MF :where(.comp-mn668kp0) p,
+#main_MF :where(.comp-mn668kp0) span {
+  font-family: var(--font-main, 'Manrope', sans-serif) !important;
+  font-weight: 400 !important;
+}
+
+#main_MF :where(.comp-mn668kpv).button {
+  width: auto !important;
+  min-width: 172px !important;
+  min-height: 54px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  padding: 0 28px !important;
+  border: 1.5px solid #2f425f !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.76) !important;
+  box-shadow: 0 14px 34px rgba(47, 66, 95, 0.14) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease, border-color 0.28s ease !important;
+}
+
+#main_MF :where(.comp-mn668kpv).button .label {
+  font-family: var(--font-main, 'Manrope', sans-serif) !important;
+  font-size: clamp(15px, 0.95vw, 18px) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #2f425f !important;
+  background: transparent !important;
+  transform: translateY(0.5px);
+}
+
+#main_MF :where(.comp-mn668kpv).button::after {
+  content: "→";
+  font-family: var(--font-main, 'Manrope', sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  color: #2f425f;
+  transform: translateX(0);
+  transition: transform 0.28s ease;
+}
+
+#main_MF :where(.comp-mn668kpv).button:hover,
+#main_MF :where(.comp-mn668kpv).button:focus-visible {
+  transform: translateY(-3px) !important;
+  background: #2f425f !important;
+  border-color: #2f425f !important;
+  box-shadow: 0 18px 44px rgba(47, 66, 95, 0.22) !important;
+}
+
+#main_MF :where(.comp-mn668kpv).button:hover .label,
+#main_MF :where(.comp-mn668kpv).button:focus-visible .label,
+#main_MF :where(.comp-mn668kpv).button:hover::after,
+#main_MF :where(.comp-mn668kpv).button:focus-visible::after {
+  color: #ffffff !important;
+}
+
+#main_MF :where(.comp-mn668kpv).button:hover::after,
+#main_MF :where(.comp-mn668kpv).button:focus-visible::after {
+  transform: translateX(5px);
+}
+
+#main_MF :where(.comp-mn668kpv).button:active {
+  transform: translateY(-1px) scale(0.99) !important;
+}
+
+@media screen and (max-width: 1023px) {
+  #main_MF :where(.comp-mn668kp0) {
+    max-width: 88vw;
+    line-height: 1.65 !important;
+    text-align: left !important;
+  }
+
+  #main_MF :where(.comp-mn668kpv).button {
+    min-width: 158px !important;
+    min-height: 50px !important;
+    padding: 0 24px !important;
+    margin-top: 18px !important;
+  }
+
+  #main_MF :where(.comp-mn668kpv).button .label {
+    font-size: 14px !important;
+    letter-spacing: 0.075em !important;
+  }
+}
+
+/* ===== Fix: true vertical centering for hero Dive In button label ===== */
+#main_MF #comp-mn668kpv.siteui-button,
+#main_MF #comp-mn668kpv._root_tpqnr_1,
+#main_MF #comp-mn668kpv.button {
+  box-sizing: border-box !important;
+  height: 54px !important;
+  min-height: 54px !important;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: visible !important;
+}
+
+#main_MF #comp-mn668kpv.siteui-button > .siteui-button__label,
+#main_MF #comp-mn668kpv.siteui-button > ._label_tpqnr_53,
+#main_MF #comp-mn668kpv.siteui-button > .label {
+  box-sizing: border-box !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: stretch !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+  transform: none !important;
+  white-space: nowrap !important;
+}
+
+#main_MF #comp-mn668kpv.siteui-button > .siteui-button__label::before,
+#main_MF #comp-mn668kpv.siteui-button > .siteui-button__label::after {
+  content: none !important;
+}
+
+#main_MF #comp-mn668kpv.siteui-button .animatedIcon,
+#main_MF #comp-mn668kpv.siteui-button ._animatedIcon_18zas_2,
+#main_MF #comp-mn668kpv.siteui-button ._icon_tpqnr_78 {
+  height: 18px !important;
+  width: 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+@media screen and (max-width: 1023px) {
+  #main_MF #comp-mn668kpv.siteui-button,
+  #main_MF #comp-mn668kpv._root_tpqnr_1,
+  #main_MF #comp-mn668kpv.button {
+    height: 50px !important;
+    min-height: 50px !important;
+  }
+}
+
+/* logos no hover */
+a[href*="logo"],a[href*="Logo"]{
+pointer-events:none!important;
+cursor:default!important;
+text-decoration:none!important;
+transition:none!important;
+animation:none!important;
+}
+a[href*="logo"]:hover,a[href*="Logo"]:hover{
+text-decoration:none!important;
+color:inherit!important;
+transform:none!important;
+}
+
+/* Disable Logos for Company hover/link */
+#comp-mn668lrk,
+#comp-mn668lrk *{
+  cursor: default !important;
+  text-decoration:none !important;
+}
+#comp-mn668lrk{
+  pointer-events:none !important;
+}
+#comp-mn668lrk:hover,
+#comp-mn668lrk:hover *{
+  transform:none !important;
+  transition:none !important;
+  animation:none !important;
+  color:inherit !important;
+  opacity:1 !important;
+}

@@ -1,14 +1,66 @@
-:root {
-  --font-main:Arial,Helvetica,sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
+:root {
+  --font-main: 'Manrope', Arial, Helvetica, sans-serif;
+  --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 }
 
-html,body,body * {
-  font-family:var(--font-main)!important;
+html,
+body,
+body * {
+  font-family: var(--font-main) !important;
+}
 
+/* Elegant portfolio heading style */
+h1,
+h2,
+h3,
+[class*="title"],
+[class*="Title"],
+[class*="heading"],
+[class*="Heading"],
+.logo-wrapper,
+.logo-wrapper *,
+.mobile-menu-logo,
+.mobile-menu-logo *,
+header [class*="logo"],
+header [class*="logo"] *,
+.header [class*="logo"],
+.header [class*="logo"] * {
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em;
+}
+
+nav,
+nav *,
+[class*="nav"],
+[class*="nav"] *,
+button,
+.button,
+[class*="button"],
+[class*="Button"] {
+  font-family: var(--font-main) !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 /* Unified header spacing */
-header,.header,.site-header,[class*="header"]{line-height:1.2!important;}
-header .logo,.header .logo,[class*="logo"]{line-height:1.1!important;}
-header nav a,.header nav a,[class*="nav"] a{line-height:1.2!important;}
+header,
+.header,
+.site-header,
+[class*="header"] {
+  line-height: 1.2 !important;
+}
+
+header .logo,
+.header .logo,
+[class*="logo"] {
+  line-height: 1.1 !important;
+}
+
+header nav a,
+.header nav a,
+[class*="nav"] a {
+  line-height: 1.2 !important;
+}

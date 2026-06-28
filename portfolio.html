@@ -406,6 +406,28 @@ header nav a,.header nav a,[class*="nav"] a{line-height:1.2!important;}
   text-underline-offset: 3px !important;
 }
 </style>
+
+<style id="logos-nohover-style">
+a[href], .logos-no-link, a:has(> span){
+}
+a, a:hover{ text-decoration:none; }
+a[href*="logo"], a[href*="Logo"]{pointer-events:none!important;cursor:default!important;text-decoration:none!important;}
+</style>
+
+<style id="portfolio-padding-fix">
+main#PAGE_SECTIONSbbct7 .max-width-container{
+  padding-left:clamp(32px,5vw,72px)!important;
+  padding-right:clamp(32px,5vw,72px)!important;
+  box-sizing:border-box;
+}
+@media (max-width:768px){
+main#PAGE_SECTIONSbbct7 .max-width-container{
+  padding-left:20px!important;
+  padding-right:20px!important;
+}
+}
+</style>
+
 </head>
 <body class="responsive">
 <svg style="display:none">
