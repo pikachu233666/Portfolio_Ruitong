@@ -14190,3 +14190,44 @@ overflow:auto;
 @media (max-width:768px){
 .mobile-menu-toggle{display:block!important;position:fixed;top:24px;right:24px;z-index:100000;}
 }
+
+
+/* === About page scroll reveal animation (added) === */
+#comp-mpz1m8nx,
+#comp-mnc2wgy61,
+#comp-mnc31ysn10,
+#comp-mo1id15v {
+  opacity: 0 !important;
+  will-change: transform, opacity;
+  transition: opacity 0.9s cubic-bezier(.22,1,.36,1), transform 0.9s cubic-bezier(.22,1,.36,1) !important;
+}
+
+#comp-mpz1m8nx,
+#comp-mnc31ysn10,
+#comp-mo1id15v {
+  transform: translateX(-72px) !important;
+}
+
+#comp-mnc2wgy61 {
+  transform: translateY(72px) !important;
+}
+
+#comp-mpz1m8nx.about-scroll-reveal-visible,
+#comp-mnc2wgy61.about-scroll-reveal-visible,
+#comp-mnc31ysn10.about-scroll-reveal-visible,
+#comp-mo1id15v.about-scroll-reveal-visible {
+  opacity: 1 !important;
+  transform: translate3d(0,0,0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #comp-mpz1m8nx,
+  #comp-mnc2wgy61,
+  #comp-mnc31ysn10,
+  #comp-mo1id15v {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+/* === End about page scroll reveal animation === */

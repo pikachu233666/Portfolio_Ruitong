@@ -846,5 +846,53 @@ a[href*="logo"], a[href*="Logo"]{pointer-events:none!important;cursor:default!im
   });
 }());
   </script>
+
+<script>
+  (function () {
+    function initAboutScrollReveal() {
+      var selectors = [
+        '#comp-mpz1m8nx',      // about_1.jpg image block: left reveal
+        '#comp-mnc2wgy61',     // first description block: up reveal
+        '#comp-mnc31ysn10',    // a lifelong fascination: left reveal
+        '#comp-mo1id15v'       // My story whole block: left reveal
+      ];
+
+      var elements = selectors
+        .map(function (selector) { return document.querySelector(selector); })
+        .filter(Boolean);
+
+      if (!elements.length) return;
+
+      if (!('IntersectionObserver' in window)) {
+        elements.forEach(function (el) {
+          el.classList.add('about-scroll-reveal-visible');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('about-scroll-reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.16,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      elements.forEach(function (el) {
+        observer.observe(el);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAboutScrollReveal);
+    } else {
+      initAboutScrollReveal();
+    }
+  }());
+</script>
 </body>
 </html>

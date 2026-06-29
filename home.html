@@ -1158,5 +1158,48 @@ color:#004ADB !important;
   });
 }());
   </script>
+
+<script>
+(function () {
+  var revealItems = [
+    document.getElementById('comp-mn668lpc'),
+    document.getElementById('comp-mn7fabnl'),
+    document.getElementById('comp-mn668nww')
+  ].filter(Boolean);
+
+  if (!revealItems.length) return;
+
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealItems.forEach(function (el) {
+      el.classList.add('scroll-reveal-visible');
+    });
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    revealItems.forEach(function (el) {
+      el.classList.add('scroll-reveal-visible');
+    });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('scroll-reveal-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.18,
+    rootMargin: '0px 0px -12% 0px'
+  });
+
+  revealItems.forEach(function (el) {
+    observer.observe(el);
+  });
+}());
+</script>
+
 </body>
 </html>

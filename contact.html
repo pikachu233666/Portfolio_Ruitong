@@ -413,6 +413,30 @@ a[href], .logos-no-link, a:has(> span){
 a, a:hover{ text-decoration:none; }
 a[href*="logo"], a[href*="Logo"]{pointer-events:none!important;cursor:default!important;text-decoration:none!important;}
 </style>
+
+<style id="contact-start-conversation-reveal-style">
+  /* Contact: Start a Conversation scroll reveal */
+  #comp-mnc2d6dd.contact-start-reveal {
+    opacity: 0 !important;
+    transform: translate3d(-90px, 0, 0) !important;
+    transition: opacity 0.9s cubic-bezier(.22, 1, .36, 1), transform 0.9s cubic-bezier(.22, 1, .36, 1) !important;
+    will-change: opacity, transform;
+  }
+
+  #comp-mnc2d6dd.contact-start-reveal.contact-start-visible {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #comp-mnc2d6dd.contact-start-reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
 </head>
 <body class="responsive">
 <svg style="display:none">
@@ -875,5 +899,53 @@ a[href*="logo"], a[href*="Logo"]{pointer-events:none!important;cursor:default!im
   });
 }());
   </script>
+
+
+<script id="contact-start-conversation-reveal-script">
+  (function () {
+    function setupContactTitleReveal() {
+      var title = document.getElementById("comp-mnc2d6dd");
+      if (!title) return;
+
+      title.classList.add("contact-start-reveal");
+
+      function reveal() {
+        window.setTimeout(function () {
+          title.classList.add("contact-start-visible");
+          title.classList.add("contact-reveal-visible");
+        }, 120);
+      }
+
+      var rect = title.getBoundingClientRect();
+      var alreadyVisible = rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+
+      if (alreadyVisible || !("IntersectionObserver" in window)) {
+        window.requestAnimationFrame(reveal);
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            reveal();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -8% 0px"
+      });
+
+      observer.observe(title);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setupContactTitleReveal);
+    } else {
+      setupContactTitleReveal();
+    }
+  }());
+</script>
+
 </body>
 </html>
